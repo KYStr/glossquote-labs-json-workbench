@@ -115,8 +115,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2880,
-      "sha256": "4053b83850dc128dfda28b31ff3e14dc8d712444799230db667d6011598956f2"
+      "bytes": 4111,
+      "sha256": "e60cf55debaff1aceaacea2051fd68201b4ccc9ba9e9378d8e824aaba66f4933"
     },
     {
       "path": "scripts/build-worker.mjs",

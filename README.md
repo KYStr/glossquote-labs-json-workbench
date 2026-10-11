@@ -1,5 +1,15 @@
 # JSON 檢查與排版
 
+## Current live release — 2026-10-11
+
+[繁體中文](https://json.glossquote.com/index.html) · [English](https://json.glossquote.com/en/index.html)
+
+Deployed source: [44ce2844ffca](https://github.com/KYStr/glossquote-labs-json-workbench/commit/44ce2844ffcab4ed5c90ef066dcfc5dfdf233520); Cloudflare version `0ed10b51-ad10-4b28-b5f3-8c4b91488b3e`. This dated status supersedes older candidate-only or NOT_DEPLOYED notes below. Later documentation-only commits do not change the deployed assets.
+
+Release verification passed: 17 public assets matched the reviewed build byte for byte across 38 HTTP response checks, including HTTPS, security headers, MIME, bilingual SEO, robots/sitemap, missing paths and configured redirects. Both language pages received scoped browser checks. Number-token preservation and decoded duplicate-key rejection were exercised.
+
+The runtime retains its previously accepted offline test evidence; this release changes hosting configuration and documentation, not tool algorithms. Full Network/Storage inspection, physical devices, assistive technology and all remaining documented manual checks are still NOT_RUN. Live publication is not a claim of exhaustive certification or search-engine indexing.
+
 繁體中文與英文的瀏覽器 JSON 檢查工具。以有界 parser 保留原始數字、字串與鍵順序，提供兩空格排版或一行輸出；重複鍵、非法語法、未配對 Unicode 與超限資料會停止處理。
 
 給需要檢查設定檔片段、閱讀 API 範例的人：貼入 JSON，檢查完整語法與重複鍵，再以兩空格排版或壓成一行。原始數字與字串 token 的寫法不被重新解讀。
