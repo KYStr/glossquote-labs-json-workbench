@@ -27,7 +27,10 @@
         <fieldset><legend>Output format</legend><div class="modes"><label><input type="radio" name="mode" value="pretty" checked>Two-space formatting</label><label><input type="radio" name="mode" value="compact">Compact to one line</label></div></fieldset>
         <div class="actions"><button id="run" class="primary" type="button" disabled>Check and format</button><button id="cancel" type="button" disabled>Cancel</button><button id="clear" class="quiet" type="button">Clear all</button></div>
       </div>
-      <p id="status" class="status" role="status" aria-live="polite" aria-atomic="true">Paste JSON, then check it to get a formatted result.</p>
+      <div class="feedback">
+        <p id="status" class="status" role="status" aria-live="polite" aria-atomic="true">Paste JSON, then check it to get a formatted result.</p>
+        <div id="error-actions" class="actions error-actions" hidden><button id="go-to-error" type="button" disabled aria-controls="source" aria-describedby="status error-help">Go to error</button><p id="error-help" class="field-help">Moves the caret. Your source stays unchanged.</p></div>
+      </div>
       <div class="result-pane">
         <label for="output">Formatted result</label>
         <p id="output-help" class="field-help">Your result appears here after a successful check.</p>
@@ -40,7 +43,7 @@
     <section class="help" aria-labelledby="help-title">
       <h2 id="help-title">How to check and format JSON</h2>
       <p>Paste JSON, check its syntax and duplicate keys, then copy a more readable result. The original text of large integers and decimals is preserved. Other software may handle their precision differently.</p>
-      <ol><li>Paste your JSON source and choose two-space formatting or compact one-line output.</li><li>Choose “Check and format”. If there is an error, correct the indicated line and column, then check again.</li><li>Copy the result or download formatted.json, encoded as UTF-8 without a BOM.</li></ol>
+      <ol><li>Paste your JSON source and choose two-space formatting or compact one-line output.</li><li>Choose “Check and format”. If an error has a position, choose “Go to error” to move the caret. Correct your source, then check again. Nothing is repaired automatically.</li><li>Copy the result or download formatted.json, encoded as UTF-8 without a BOM.</li></ol>
       <details><summary>Size, structure and interoperability limits</summary><ul>
         <li>Input: up to 262,144 UTF-8 bytes (256 KiB). UTF-16 length is checked first, with a 262,144 code-unit limit.</li>
         <li>Up to 50,000 tokens, including punctuation and excluding whitespace. Up to 64 nested container levels.</li>

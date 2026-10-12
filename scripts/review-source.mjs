@@ -3,7 +3,7 @@ import {createHash} from 'node:crypto';
 import path from 'node:path';
 import {root,listFiles} from './check.mjs';
 export async function sourceInventory() {
-  const files=['package.json','.gitignore','wrangler.jsonc','README.md','project.json','docs/UI-BRIEF.md','docs/VALIDATION.md','docs/RELEASE-CANDIDATE.md'];
+  const files=['package.json','.gitignore','wrangler.jsonc','README.md','project.json','docs/UI-BRIEF.md','docs/VALIDATION.md','docs/RELEASE-CANDIDATE.md','docs/U02-ERROR-LOCATION.md'];
   for(const dir of ['public','scripts','test']) {
     const found=await listFiles(path.join(root,dir));
     files.push(...found.map(file=>path.relative(root,file).replaceAll(path.sep,'/')));

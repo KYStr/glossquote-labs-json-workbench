@@ -27,7 +27,10 @@
         <fieldset><legend>排版模式</legend><div class="modes"><label><input type="radio" name="mode" value="pretty" checked>兩空格排版</label><label><input type="radio" name="mode" value="compact">壓成一行</label></div></fieldset>
         <div class="actions"><button id="run" class="primary" type="button" disabled>檢查並整理</button><button id="cancel" type="button" disabled>取消</button><button id="clear" class="quiet" type="button">全部清除</button></div>
       </div>
-      <p id="status" class="status" role="status" aria-live="polite" aria-atomic="true">貼上 JSON，檢查後再複製整理結果。</p>
+      <div class="feedback">
+        <p id="status" class="status" role="status" aria-live="polite" aria-atomic="true">貼上 JSON，檢查後再複製整理結果。</p>
+        <div id="error-actions" class="actions error-actions" hidden><button id="go-to-error" type="button" disabled aria-controls="source" aria-describedby="status error-help">前往錯誤位置</button><p id="error-help" class="field-help">只移動插入點，原文不改動。</p></div>
+      </div>
       <div class="result-pane">
         <label for="output">整理結果</label>
         <p id="output-help" class="field-help">檢查完成後，結果會出現在這裡。</p>
@@ -40,7 +43,7 @@
     <section class="help" aria-labelledby="help-title">
       <h2 id="help-title">如何檢查與整理 JSON</h2>
       <p>貼入 JSON，確認語法與重複鍵檢查後，複製更容易閱讀的排版。大型整數和小數的原始文字寫法會保留，但不代表所有下游軟體都支援相同精度。</p>
-      <ol><li>貼上 JSON 原文，選擇「兩空格排版」或「壓成一行」。</li><li>按「檢查並整理」。若有錯誤，依標示的行與欄修正來源，再重新檢查。</li><li>複製整理結果，或下載 UTF-8、無 BOM 的 formatted.json。</li></ol>
+      <ol><li>貼上 JSON 原文，選擇「兩空格排版」或「壓成一行」。</li><li>按「檢查並整理」。若錯誤有位置，按「前往錯誤位置」移動插入點，再自行修正並重新檢查；原文不會自動變更。</li><li>複製整理結果，或下載 UTF-8、無 BOM 的 formatted.json。</li></ol>
       <details><summary>大小、結構與互通性限制</summary><ul>
         <li>輸入最多 262,144 UTF-8 bytes（256 KiB），先檢查 UTF-16 長度不超過 262,144。</li>
         <li>最多 50,000 個 token（含標點、不含空白），容器巢狀最多 64 層。</li>

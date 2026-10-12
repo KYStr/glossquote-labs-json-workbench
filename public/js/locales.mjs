@@ -1,6 +1,7 @@
 export const locales = Object.freeze({
   'zh-Hant': {
     check:'檢查並整理', busy:'正在整理…',
+    goToError:'前往錯誤位置',
     idle:'貼上 JSON，檢查後再複製整理結果。',
     dirty:'內容或排版模式已變更，請重新檢查。',
     running:'正在檢查與整理 JSON…',
@@ -26,6 +27,7 @@ export const locales = Object.freeze({
   },
   en: {
     check:'Check and format', busy:'Formatting…',
+    goToError:'Go to error',
     idle:'Paste JSON, then check it to get a formatted result.',
     dirty:'The source or format changed. Check it again.',
     running:'Checking and formatting JSON…',
